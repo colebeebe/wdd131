@@ -68,7 +68,12 @@ main img {
       display: none;
    }
    header #menu-links {
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       max-width: 800px;
    }
+}
+
+#menu-links.hide {
+   display: none;
 }
