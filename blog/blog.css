@@ -80,3 +80,18 @@ div {
 .date {
     font-size: 20px;
 }
+
+.skiptocontent a {
+    color: white;
+    position: absolute;
+    left: -200px;
+    justify-content: center;
+    background-color: #AF1B3F;
+    max-width: 180px;
+    border: 10px solid #AF1B3F;
+    border-radius: 10px;
+}
+.skiptocontent a:focus {
+    position: static;
+    display: flex;
+}
