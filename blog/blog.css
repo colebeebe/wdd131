@@ -76,3 +76,7 @@ div {
 .info-panel * {
     margin-right: 15px;
 }
+
+.date {
+    font-size: 20px;
+}
