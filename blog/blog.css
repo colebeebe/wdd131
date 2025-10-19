@@ -9,12 +9,16 @@ body {
 
 h1, h2 {
     font-family: "Lora", Impact, serif;
-    color: #AF1B3F;
 }
 
 h1 {
     display: flex;
     justify-content: center;
+    color: #473144;
+}
+
+h2 {
+    color: #AF1B3F;
 }
 
 a {
