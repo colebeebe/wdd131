@@ -2,9 +2,15 @@
     /* border: 2px solid red; */
 }
 
+:root {
+    --dark: #473144;
+    --red: #AF1B3F;
+    --light: #EFC69B;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
-    color: #473144;
+    color: var(--dark);
 }
 
 h1, h2 {
@@ -14,24 +20,24 @@ h1, h2 {
 h1 {
     display: flex;
     justify-content: center;
-    color: #473144;
+    color: var(--dark);
 }
 
 h2 {
-    color: #AF1B3F;
+    color: var(--red);
 }
 
 a {
-    color: #AF1B3F;
+    color: var(--red);
     text-decoration: none;
 }
 
 .filter-panel {
-    border: 2px solid #EFC69B;
+    border: 2px solid var(--light);
 }
 
 .info-panel {
-    border-right: 2px solid #EFC69B;
+    border-right: 2px solid var(--light);
 }
 
 .info-panel h3, .info-panel p {
@@ -41,13 +47,15 @@ a {
 
 .book-panel img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 15px auto;
+}
+.book-panel h2, .book-panel p {
+    margin: auto 20px;
 }
 
 #menu-links {
-    border-top: 2px solid #EFC69B;
-    border-bottom: 2px solid #EFC69B;
+    border-top: 2px solid var(--light);
+    border-bottom: 2px solid var(--light);
 }
 
 #menu-links ul {
@@ -59,26 +67,23 @@ a {
 
 #reviews {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row;
 }
 
 #content {
     display: grid;
     grid-template-columns: 4fr 1fr;
+    margin: 20px auto;
 }
 
 #book-info-1, #book-info-2 {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    margin: 20px;
-}
-
-div {
-    margin: 10px;
+    margin: 15px 20px;
 }
 
 .info-panel * {
-    margin-right: 15px;
+    margin: 8px;
 }
 
 .date {
@@ -90,9 +95,9 @@ div {
     position: absolute;
     left: -200px;
     justify-content: center;
-    background-color: #AF1B3F;
+    background-color: var(--red);
     max-width: 180px;
-    border: 10px solid #AF1B3F;
+    border: 10px solid var(--red);
     border-radius: 10px;
 }
 .skiptocontent a:focus {
