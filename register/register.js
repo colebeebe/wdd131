@@ -1,18 +1,47 @@
 let numParticipants = 1;
 
-// Connect the 'Add Participant' button
+function participantTemplate(count) {
+    return `<section class="participant${count}">
+	<p>Participant ${count}</p>
+	<div class="item">
+	    <label for="fname${count}"> First name<span>*</span></label>
+	    <input id="fname${count}" type="text" name="fname${count}" value="" requred/>
+	</div>
+	<div class="item activities">
+	    <label for="activity${count}">Activity #<span>*</span></label>
+	    <input id="activity${count}" type="text" name="activity${count}" />
+	</div>
+	<div class="item">
+	    <label for="fee${count}">Fee ($)<span>*</span></label>
+	    <input id="fee${fee}" type="number" name="fee${count}" />
+	</div>
+	<div class="item">
+	    <label for="date${count}">Desired Date <span>*</span></label>
+	    <input id="date${count}" type="date" name="date${count}" />
+	</div>
+	<div class="item">
+	    <p>Grade</p>
+	    <select>
+		<option selected value="" disabled selected></option>
+		<option value="1">1st</option>
+		<option value="2">2nd</option>
+		<option value="3">3rd</option>
+		<option value="4">4th</option>
+		<option value="5">5th</option>
+		<option value="6">6th</option>
+		<option value="7">7th</option>
+		<option value="8">8th</option>
+		<option value="9">9th</option>
+		<option value="10">10th</option>
+		<option value="11">11th</option>
+		<option value="12">12th</option>
+	    </select>
+	</div>
+    </section>`;
+}
+
 document.querySelector("#add").addEventListener("click", function() {
-    // Since we already have the HTML laid out, we can just copy it over
-    const sectionHTML = document.querySelector(".participant1").innerHTML;
-    const newSection = document.createElement("section");
-    newSection.innerHTML = sectionHTML;
-    // Because there are id's in the copied HTML, we have to update them so they are unique
-    newSection.querySelector("#fname").id = "fname" + numParticipants;
-    newSection.querySelector("#activity").id = "activity" + numParticipants;
-    newSection.querySelector("#fee").id = "fee" + numParticipants;
-    newSection.querySelector("#date").id = "date" + numParticipants;
-    document.querySelector(".participants").insertBefore(newSection, this);
-    // Update the number of participants and change the text above each participant field
     numParticipants++;
-    newSection.querySelector("p").textContent = "Participant " + numParticipants;
+    this.insertAdjacentHTML("beforebegin", participantTemplate(numParticipants))
 });
+
