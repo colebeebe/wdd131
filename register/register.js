@@ -46,7 +46,21 @@ document.querySelector("#add").addEventListener("click", function() {
 });
 
 function successTemplate(info) {
-    
+    let thanksMessage = "Thank you";
+    if (info.adultName !== "") {
+	thanksMessage += ", " + info.adultName;
+    }
+    thanksMessage += "!";
+   
+    let participant = "participant";
+    if (info.numParticipants > 1) {
+	participant += "s";
+    }
+
+    return `<div class="confirmation">
+	<h2>${thanksMessage}</h2>
+	<p>Your total will be $${info.feeTotal} for ${info.numParticipants} ${participant}.</p>
+    </div>`
 }
 
 function totalFees() {
@@ -66,6 +80,12 @@ function totalFees() {
 
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
+    const info = {
+	adultName: document.querySelector("#adult_name").value,
+	numParticipants: numParticipants,
+	feeTotal: totalFees()
+    }
+    document.body.insertAdjacentHTML("beforeend", successTemplate(info));
     this.style.display = "none";
     console.log(totalFees());
 });

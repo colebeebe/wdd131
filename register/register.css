@@ -92,6 +92,14 @@ input:hover::placeholder {
     width: 48%;
 }
 
+.confirmation {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #006622;
+}
+
 /* Style checkbox and radio. To do this we have to hide the defaults then we create our own */
 input[type="radio"] {
     display: none;
