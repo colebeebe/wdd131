@@ -13,7 +13,7 @@ function participantTemplate(count) {
 	</div>
 	<div class="item">
 	    <label for="fee${count}">Fee ($)<span>*</span></label>
-	    <input id="fee${fee}" type="number" name="fee${count}" />
+	    <input id="fee${count}" type="number" name="fee${count}" />
 	</div>
 	<div class="item">
 	    <label for="date${count}">Desired Date <span>*</span></label>
@@ -43,5 +43,30 @@ function participantTemplate(count) {
 document.querySelector("#add").addEventListener("click", function() {
     numParticipants++;
     this.insertAdjacentHTML("beforebegin", participantTemplate(numParticipants))
+});
+
+function successTemplate(info) {
+    
+}
+
+function totalFees() {
+    // the selector below lets us grab any element that has an id that begins with "fee"
+    let feeElements = document.querySelectorAll("[id^=fee]");
+    console.log(feeElements);
+    //querySelectorAll returns a NodeList. It's like an Array, but not exactly the same.
+    // The line below is an easy way to convert something that is list-like to an actual array so we can use all of the helpful Array methods...like reduce
+    // The "..." is called the spread operator. It "spreads" apart the list, then the [] we wrapped it in inserts those list items into a new Array.
+    feeElements = [...feeElements];
+    // sum up all of the fees. Something like Array.reduce() coud be very helpful here :) Or you could use a Array.forEach() as well.
+    // Remember that the text that was entered into the input element will be found in the .value of the element.
+    const sum = feeElements.reduce((acc, curr) => acc + Number(curr.value), 0);
+    // once you have your total make sure to return it!
+    return sum;
+}
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    this.style.display = "none";
+    console.log(totalFees());
 });
 
