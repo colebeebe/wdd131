@@ -160,4 +160,14 @@ button:hover {
 	width: 100%;
     }
 }
+@media screen and (min-width: 1000px) {
+    .participants {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+    }
+    #add {
+	grid-column: 1 / 3;
+    }
+}
 
