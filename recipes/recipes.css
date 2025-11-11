@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+:root {
+    --primary-color: #1b98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC";
+}
+
+h1 {
+    font-family: var(--secondary-font);
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social > a {
+    height: 80px;
+    width: 80px;
+}
