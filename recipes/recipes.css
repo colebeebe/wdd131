@@ -8,8 +8,17 @@
     --secondary-font: "Amatic SC";
 }
 
+* {
+    font-family: var(--primary-font);
+}
+
+img {
+    max-width: 100%;
+}
+
 h1 {
     font-family: var(--secondary-font);
+    margin: 0;
 }
 
 .social {
@@ -20,6 +29,123 @@ h1 {
 }
 
 .social > a {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container h1 {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.logo-container {
+    display: inline-flex;
+    justify-self: center;
+    align-items: flex-end;
+    margin: 10px auto;
+}
+
+.logo-container > img {
+    width: 100px;
+    height: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid var(--text-light);
+    padding: 20px;
+}
+
+.search-box > input {
+    height: 31px;
+    flex: 1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid var(--text-dark);
+    font-size: 1.15em;
+}
+.search-box > button {
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border: 1px solid var(--text-dark);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid var(--text-dark);
+    border-radius: 5px;
+}
+
+.recipe-info {
+    margin: 10px 0;
+}
+
+.recipe-type {
+    border: 2px solid var(--text-dark);
+    margin: 0 auto;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.recipe-name {
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.recipe-description {
+    display: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+footer > a {
+    margin: 10px auto;
+}
+
+@media screen and (min-width: 600px) {
+    .recipe {
+        flex-direction: row;
+    }
+    .recipe > img {
+        max-width: 50%;
+    }
+    .recipe-info {
+        margin: 0 10px;
+    }
+    .recipe-description {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    footer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    footer > a {
+        margin: 10px;
+    }
 }

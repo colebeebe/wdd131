@@ -7,35 +7,40 @@
         <meta name="author" content="Cole Beebe-Urbanawiz">
         <title>Recipe Book</title>
         <link rel="stylesheet" href="recipes.css" />
-        <script src="main.js" defer></script>
+        <script type="module" src="main.js" defer></script>
     </head>
     <body>
         <header>
-            <h1>RecipeBook</h1>
-            <form>
-                <div class="search-box">
-                    <input type="text" id="search-bar" name="search-bar" placeholder="Find a recipe" />
-                    <button>
-                        <img src="images/search.svg" alt="Search icon" />
-                    </button>
-                </div>
+            <div class="logo-container" >
+                <img src="images/recipe-book.png" alt="Logo" />
+                <h1>RecipeBook</h1>
+            </div>
+            <form class="search-box">
+                <input type="text" id="search-bar" name="search-bar" placeholder="Find a recipe" />
+                <button>
+                    <img src="images/search.svg" alt="Search icon" />
+                </button>
             </form>
         </header>
         <main>
             <div class="recipe">
-                <h1 class="recipe-name">[Recipe Name]</h1>
-                <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars"
-                >
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="recipe-description">[Recipe Description]</p>
+                <img class="recipe-image" alt="Recipe image" />
+                <div class="recipe-info">
+                    <div class="tag-container"></div>
+                    <h1 class="recipe-name">[Recipe Name]</h1>
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: 4 out of 5 stars"
+                    >
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                        <span aria-hidden="true" class="icon-star-empty">☆</span>
+                    </span>
+                    <p class="recipe-description">[Recipe Description]</p>
+                </div>
             </div>
         </main>
         <footer>
