@@ -16,7 +16,7 @@ img {
     max-width: 100%;
 }
 
-h1 {
+h1, h2 > a {
     font-family: var(--secondary-font);
     margin: 0;
 }
@@ -94,18 +94,18 @@ form {
     border-radius: 5px;
 }
 
-.recipe-info {
-    margin: 10px 0;
+figcaption {
+    margin: 10px 20px;
 }
 
-.recipe-type {
+.recipe__tags > li {
     border: 2px solid var(--text-dark);
-    margin: 0 auto;
+    margin: 0 2px;
     padding: 5px 10px;
     display: inline-block;
 }
 
-.recipe-name {
+h2 > a {
     color: var(--primary-color);
     margin-top: 20px;
 }
