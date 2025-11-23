@@ -58,11 +58,31 @@ function ratingTemplate(rating) {
 
 function renderRecipes(recipeList) {
     const container = document.querySelector(".recipe-container");
+    container.innerHTML = ``;
     recipeList.forEach(recipe => container.innerHTML += recipeTemplate(recipe));
 }
 
 function init() {
-    const recipe = getRandomListEntry(recipes);
-    renderRecipes([recipe]);
+    renderRecipes(recipes);
 }
 init();
+
+function filterRecipes(query) {
+    return recipes.filter((recipe) => 
+        recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+        recipe.tags.find((item) => item.toLowerCase().includes(query.toLowerCase())) ||
+        recipe.description.toLowerCase().includes(query.toLowerCase())
+    );
+}
+
+const input = document.querySelector("#search-bar");
+const button = document.querySelector("button");
+button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const query = input.value;
+    let recipeList = filterRecipes(query);
+    if (query === "") {
+        recipeList = recipes;
+    }
+    renderRecipes(recipeList);
+});
