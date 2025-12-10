@@ -1,0 +1,31 @@
+.about-me {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 40px 80px;
+    margin: 80px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-me > * {
+    color: var(--dark);
+}
+
+.github-link {
+    background-color: var(--dark-accent);
+    color: var(--light);
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-flex;
+    gap: 5px;
+}
+
+.github-link > img {
+    height: 25px;
+}
+
+.about-me > img {
+    border-radius: 20px;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

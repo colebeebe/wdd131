@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
+:root {
+  /* change the values below to your colors from your palette */
+  --dark-primary: #8abfa6;
+  --light-primary: #bfd9c3;
+  --light-accent: #d98e63;
+  --dark-accent: #a64f3c;
+  --dark: #262523;
+  --light: #f0eded;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "Kedebideri";
+  --paragraph-font: "Merriweather";
+}
+
+body {
+    background-color: var(--light);
+    margin: 0;
+    font-family: var(--paragraph-font);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    gap: 20px;
+    margin: 10px 20px;
+    font-family: var(--heading-font);
+}
+
+nav {
+    flex: 1;
+    background-color: var(--dark-primary);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 20px;
+    border-radius: 18px;
+    align-self: center;
+}
+
+nav > a {
+    color: var(--dark);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+nav > a:hover {
+    background-color: var(--light-primary);
+}
+
+.logo {
+    color: var(--dark);
+    background-color: var(--dark-primary);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.logo > p {
+    font-size: 2rem;
+    font-weight: 700;
+}
