@@ -1,4 +1,4 @@
-
+// Data for all of the projects; may be replaced with json
 const projects = [
     {
         title: "Voxel-Style Rendering Engine",
@@ -39,6 +39,7 @@ function buildProject(project, leftAlign, index) {
             </div>
     `;
 
+    // If the project has images, add them to the html. If there are multiple, create buttons for a carousel
     if (project.images && project.images.length > 0) {
         const first = project.images[0];
         const multiple = project.images.length > 1;
@@ -56,25 +57,30 @@ function buildProject(project, leftAlign, index) {
     return html;
 }
 
+// Add the projects title to the page
 const main = document.querySelector("main");
 main.innerHTML = `<h1>Projects</h1>`;
 
+// Create an element for every project in our array
 projects.forEach((project, index) => {
     main.innerHTML += buildProject(project, index % 2 === 0, index);
 });
 
+// Get an array of all of our carousels and loop through them
 const carousels = document.querySelectorAll(".carousel");
 
 carousels.forEach(carousel => {
     const projectIndex = Number(carousel.dataset.project);
     const imgs = projects[projectIndex].images;
 
-    if (!imgs || imgs.length <= 1) return; // no need for buttons
+    // If there aren't enough images, we can exit here since we don't need to add functionality to buttons
+    if (!imgs || imgs.length <= 1) return;
 
     const imgElement = carousel.querySelector("img");
     const prevBtn = carousel.querySelector(".prev");
     const nextBtn = carousel.querySelector(".next");
 
+    // Create the functionality for the previous and next buttons, respectively
     prevBtn.addEventListener("click", () => {
         let idx = Number(carousel.dataset.index);
         idx = (idx - 1 + imgs.length) % imgs.length;
