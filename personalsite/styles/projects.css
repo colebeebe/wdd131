@@ -1,0 +1,17 @@
+.project {
+    max-width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.project > img {
+    max-height: 200px;
+}
