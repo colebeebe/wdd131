@@ -1,3 +1,4 @@
+
 const projects = [
     {
         title: "Voxel-Style Rendering Engine",
@@ -6,7 +7,7 @@ const projects = [
             {
                 path: "images/voxel_engine.png",
                 alt: "in-engine example photo"
-            },
+            }
         ],
     },
     {
@@ -15,11 +16,11 @@ const projects = [
         images: [
             {
                 path: "images/portable_wii.jpeg",
-                alt: "image of portable wii on startup menu"
+                alt: "portable wii on startup menu"
             },
             {
                 path: "images/portable_wii_inside.jpeg",
-                alt: "image of portable wii internals"
+                alt: "portable wii internals"
             }
         ],
     },
@@ -29,31 +30,65 @@ const projects = [
     }
 ];
 
-
-function buildProject(project, leftAlign) {
-    let html = ``;
-    if (leftAlign) {
-        html += `<div class="project left">`
-    }
-    else {
-        html += `<div class="project right">`
-    }
-    html += `
-        <div>
-            <h2>${project.title}</h2>
-            <p>${project.description}</p>
-        </div>
+function buildProject(project, leftAlign, index) {
+    let html = `
+        <div class="project ${leftAlign ? "left" : "right"}">
+            <div>
+                <h2>${project.title}</h2>
+                <p>${project.description}</p>
+            </div>
     `;
-    if ("images" in project) {
-        html += `<img src="${project.images[0].path}" alt="${project.images[0].alt}" >`
+
+    if (project.images && project.images.length > 0) {
+        const first = project.images[0];
+        const multiple = project.images.length > 1;
+
+        html += `
+            <div class="carousel" data-index="0" data-project="${index}">
+                ${multiple ? `<button class="prev">&lt;</button>` : ""}
+                <img src="${first.path}" alt="${first.alt}">
+                ${multiple ? `<button class="next">&gt;</button>` : ""}
+            </div>
+        `;
     }
+
     html += `</div>`;
     return html;
 }
 
-
 const main = document.querySelector("main");
 main.innerHTML = `<h1>Projects</h1>`;
+
 projects.forEach((project, index) => {
-    main.innerHTML += buildProject(project, index % 2 == 0);
+    main.innerHTML += buildProject(project, index % 2 === 0, index);
 });
+
+const carousels = document.querySelectorAll(".carousel");
+
+carousels.forEach(carousel => {
+    const projectIndex = Number(carousel.dataset.project);
+    const imgs = projects[projectIndex].images;
+
+    if (!imgs || imgs.length <= 1) return; // no need for buttons
+
+    const imgElement = carousel.querySelector("img");
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+
+    prevBtn.addEventListener("click", () => {
+        let idx = Number(carousel.dataset.index);
+        idx = (idx - 1 + imgs.length) % imgs.length;
+        carousel.dataset.index = idx;
+        imgElement.src = imgs[idx].path;
+        imgElement.alt = imgs[idx].alt;
+    });
+
+    nextBtn.addEventListener("click", () => {
+        let idx = Number(carousel.dataset.index);
+        idx = (idx + 1) % imgs.length;
+        carousel.dataset.index = idx;
+        imgElement.src = imgs[idx].path;
+        imgElement.alt = imgs[idx].alt;
+    });
+});
+

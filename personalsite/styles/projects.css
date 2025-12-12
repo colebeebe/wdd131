@@ -12,6 +12,26 @@
     flex-direction: row-reverse;
 }
 
-.project > img {
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel > img {
     max-height: 200px;
+}
+
+.carousel > button {
+    aspect-ratio: 1 / 1;
+    height: 30px;
+    background-color: gray;
+    color: white;
+    border-radius: 50%;
+    border: none;
+}
+
+.carousel > button:hover {
+    cursor: pointer;
+    background-color: lightgray;
 }
