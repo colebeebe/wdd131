@@ -33,7 +33,7 @@ const projects = [
 function buildProject(project, leftAlign, index) {
     let html = `
         <div class="project ${leftAlign ? "left" : "right"}">
-            <div>
+            <div class="project-content">
                 <h2>${project.title}</h2>
                 <p>${project.description}</p>
             </div>
