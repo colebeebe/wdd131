@@ -3,8 +3,7 @@
 :root {
   /* change the values below to your colors from your palette */
   --dark-primary: #8abfa6;
-  --light-primary: #bfd9c3;
-  --light-accent: #d98e63;
+  --light-primary: #a2cbb8;
   --dark-accent: #a64f3c;
   --dark: #262523;
   --light: #f0eded;
@@ -48,6 +47,7 @@ nav > a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
+    transition: background-color 0.15s ease;
 }
 
 nav > a:hover {
@@ -68,4 +68,28 @@ nav > a:hover {
 .logo > p {
     font-size: 2rem;
     font-weight: 700;
+}
+
+/* Medium (tablet) screens */
+@media screen and (max-width: 1000px) {
+
+}
+
+/* Small (phone) screens */
+@media screen and (max-width: 700px) {
+    header {
+        gap: 0;
+        margin: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+    
+    nav {
+        justify-content: center;
+        gap: 20px;
+        border-radius: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
 }
