@@ -42,9 +42,25 @@ h1 {
     color: white;
     border-radius: 50%;
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .carousel > button:hover {
     cursor: pointer;
     background-color: lightgray;
+}
+
+/* Medium (tablet) screens */
+@media screen and (max-width: 1000px) {
+    .project {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .carousel {
+        justify-content: center;
+    }
+    .carousel > img {
+        max-height: auto;
+        max-width: 80%;
+    }
 }
