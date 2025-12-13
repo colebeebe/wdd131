@@ -5,7 +5,7 @@ const projects = [
         description: "Written in C# utilizing the OpenGL mappings provided by OpenTK, this is an engine that has been in development for nearly half a year. As of yet, it is capable of rendering millions of blocks at a sustainable 1500+fps. The purpose of this project is to explore 3D rendering pipelines.",
         images: [
             {
-                path: "images/voxel_engine.png",
+                path: "images/voxel_engine_wireframe.webp",
                 alt: "in-engine example photo"
             }
         ],
@@ -15,18 +15,32 @@ const projects = [
         description: "A complete trim and relocation of many components of a Nintendo Wii console. This project included lots of micro-soldering and extreme precision. The console can run for about three hours on battery.",
         images: [
             {
-                path: "images/portable_wii.jpeg",
+                path: "images/portable_wii.webp",
                 alt: "portable wii on startup menu"
             },
             {
-                path: "images/portable_wii_inside.jpeg",
+                path: "images/portable_wii_inside.webp",
                 alt: "portable wii internals"
+            },
+            {
+                path: "images/wii_board.webp",
+                alt: "wii motherboard with marks where to trim"
             }
         ],
     },
     {
         title: "Atari Asteroids/Moonlander Arcade",
         description: "This project was created using the Godot game engine. It recreates the arcae versions of Asteroids and Moonlander. The purpose of this project was to learn more about game development.",
+        images: [
+            {
+                path: "images/asteroids.webp",
+                alt: "asteroids game"
+            },
+            {
+                path: "images/lunarlander.webp",
+                alt: "lunar lander game"
+            }
+        ]
     }
 ];
 
